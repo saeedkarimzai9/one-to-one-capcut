@@ -1,8 +1,16 @@
 {
-  "name":"system-edit",
-  "version":"0.1.0",
-  "description":"System Edit - a free local CapCut-inspired video editor",
-  "main":"main.js",
-  "scripts":{"start":"electron .","dev":"electron ."},
-  "devDependencies":{"electron":"^38.2.0"}
+  "name": "system-edit",
+  "version": "0.1.0",
+  "description": "System Edit - a free local CapCut-inspired video editor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^38.2.0"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0"
+  }
 }
