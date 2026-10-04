@@ -81,8 +81,6 @@ document.querySelectorAll(".wide-btn")[1].onclick=duplicateSegment;
 
 play.onclick=()=>video.paused?video.play():video.pause();
 video.onplay=()=>play.textContent="❚❚";video.onpause=()=>play.textContent="▶";
-document.querySelector("#back5").onclick=()=>video.currentTime=Math.max(0,video.currentTime-5);
-document.querySelector("#forward5").onclick=()=>video.currentTime=Math.min(sourceDuration,video.currentTime+5);
 document.querySelector("#speed").onchange=e=>video.playbackRate=Number(e.target.value);
 
 function fmt(s){if(!isFinite(s))return"00:00";return String(Math.floor(s/60)).padStart(2,"0")+":"+String(Math.floor(s%60)).padStart(2,"0")}
