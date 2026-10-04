@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>System Edit</title>
+  <meta name="theme-color" content="#0b0d12">
+  <title>System Edit — Modern Video Editor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
     <div class="brand"><span class="brand-mark">S</span><span>System Edit</span></div>
     <nav><button class="top-btn active">Editor</button><button class="top-btn">Templates</button><button class="top-btn">AI Tools</button></nav>
-    <div class="top-actions"><button id="undo">↶</button><button id="redo">↷</button><button class="export">Export</button></div>
+    <div class="top-actions"><button id="undo" title="Undo">↶</button><button id="redo" title="Redo">↷</button><button class="export">Export</button></div>
   </header>
 
   <main class="workspace">
@@ -27,7 +28,7 @@
     </aside>
 
     <section class="asset-panel">
-      <div class="panel-head"><h2 id="panelTitle">Media</h2><button id="importBtn">＋</button></div>
+      <div class="panel-head"><h2 id="panelTitle">Media</h2><button id="importBtn" title="Import media">＋</button></div>
       <input id="fileInput" type="file" accept="video/*,image/*,audio/*" multiple hidden>
       <div id="panelContent" class="panel-content"></div>
     </section>
@@ -40,26 +41,26 @@
       </div>
       <div class="transport">
         <span id="time">00:00</span>
-        <button id="play">▶</button>
+        <button id="play" title="Play / Pause">▶</button>
         <span id="duration">00:00</span>
         <input id="zoom" type="range" min="50" max="150" value="100">
       </div>
     </section>
 
     <aside class="inspector">
-      <h2>Properties</h2>
+      <div class="inspector-title"><div><span class="eyebrow">CLIP</span><h2>Properties</h2></div></div>
       <div class="property"><label>Scale</label><input type="range" min="50" max="150" value="100"></div>
       <div class="property"><label>Opacity</label><input type="range" min="0" max="100" value="100"></div>
       <div class="property"><label>Rotation</label><input type="range" min="-180" max="180" value="0"></div>
-      <div class="property"><label>Speed</label><select><option>0.5x</option><option>1x</option><option>1.5x</option><option>2x</option></select></div>
-      <hr>
-      <button class="wide-btn">✂ Split</button>
-      <button class="wide-btn">⧉ Duplicate</button>
+      <div class="property"><label>Speed</label><select id="speed"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option><option value="2">2x</option></select></div>
+      <div class="inspector-divider"></div>
+      <button class="wide-btn" id="splitBtn">✂ <span>Split at playhead</span></button>
+      <button class="wide-btn" id="duplicateBtn">⧉ <span>Duplicate clip</span></button>
     </aside>
   </main>
 
   <section class="timeline">
-    <div class="timeline-head"><strong>Timeline</strong><span id="projectTime">00:00 / 00:00</span><button id="addTrack">＋ Track</button></div>
+    <div class="timeline-head"><div><strong>Timeline</strong><span id="projectTime">00:00 / 00:00</span></div><button id="addTrack">＋ Track</button></div>
     <div class="tracks">
       <div class="ruler"><span>00:00</span><span>00:05</span><span>00:10</span><span>00:15</span><span>00:20</span></div>
       <div class="track"><div class="track-label">VIDEO</div><div id="videoTrack" class="clips"></div></div>
